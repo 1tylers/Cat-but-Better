@@ -1,33 +1,6 @@
 
 #include "header.h"
 
-
-/*
-	Change Memory Function: no return value, arguments are size of buffer, and the buffer
-
-	Changes the size of the buffer array
-*/
-
-/*
-void change_memory(int N, char buffer[])
-{
-   
-    ssize_t size = N;
-    
-    char* memory = new char[size];
-
-    for (int i = 0; i < size; ++i)
-    {
-        memory[i] = buffer[i];
-    }
-
-    delete[] buffer;
-
-    buffer = memory;
-}
-*/
-
-
 /*
 	Change Bytes Function: returns the new amount of bytes, the argument is the users input for this feature
 
@@ -81,9 +54,7 @@ void caesar_cipher(int shift, int size, char buffer[])
                 buffer[i] += 1;
             }
         }
-     }
-
-    
+     } 
 }
 
 
