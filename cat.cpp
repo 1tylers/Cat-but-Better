@@ -1,17 +1,6 @@
-/*
- Tyler Stenberg
- 
- Assignment 5 - dog
- 
- 2/24/23
-
- Purpose: Use multiple source code files
- */
 
 
-
-
-// Include other files
+// Include header file
 #include "header.h" 
 
 using namespace std;
@@ -23,12 +12,11 @@ int main(int argc, char* argv[])
     // Declare variables
     int i, file_descriptor, opt, num_chars;
     char buffer[1000];
-    int num_a, num_n, num_c, num_s;
-    bool check_a, check_n, check_c, check_s, check_h, check_b;
+    int num_n, num_c, num_s;
+    bool check_n, check_c, check_s, check_h, check_b;
     int feat_count = 1;
 
 	// Bools to check if features were called
-    check_a = false;
     check_n = false;
     check_c = false;
     check_s = false;
@@ -39,17 +27,12 @@ int main(int argc, char* argv[])
     ssize_t result;
 
 	// Getopt to check for the commands
-    while ((opt = getopt(argc, argv, "a:n:c:s:hb")) != -1)
+    while ((opt = getopt(argc, argv, "n:c:s:hb")) != -1)
     {
     	// For commands that take input, use atoi
     	// For each command present set the check to true, increment the feature count
         switch(opt)
         {
-            case 'a':
-                num_a = atoi(optarg);
-                feat_count += 2;
-                check_a = true;
-                break;
             case 'n':
                 num_n = atoi(optarg);
                 feat_count += 2;
@@ -115,17 +98,6 @@ int main(int argc, char* argv[])
                     // Error message
                     perror("Reading Error");
                     exit(1);
-                }
-
-
-				// If -a feature is present, call change memory function
-                if (check_a == true)
-                {
-                	// i couldnt figure out this feature
-                    num_a = 0;
-                    if (num_a == 0)
-                    {
-                    }
                 }
 
 
